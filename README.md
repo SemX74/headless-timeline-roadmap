@@ -1,19 +1,30 @@
-# Headless [almost] Timeline-Roadmap Component
+# React + TypeScript + Vite
 
-<img width="1270" alt="image" src="https://github.com/SemX74/headless-timeline-roadmap/assets/88790026/29fef14d-28f4-4a6c-8c76-3d4ea98a05c5">
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-The Calendar Component is a versatile and interactive tool designed to provide a clear and concise overview of scheduled events, tasks, and activities. It features a user-friendly interface, allowing for easy navigation and event management.
+Currently, two official plugins are available:
 
-## Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- **Navigational Controls**: Scroll or tap on navigation buttons to switch current month. days are prerendered.
-- **Event Indicators**: Visual cues for different types of events, enabling users to quickly identify the nature of each calendar entry.
-- **Eazy to scale**: Allows users to categorize, colorize and enhance this component with such features like popups on click, listening to every day component etc.
+## Expanding the ESLint configuration
 
-## Customization
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-The Calendar Component can be customized to fit the theme of your application. It supports custom color schemes, fonts, and additional styling options to match your brand identity.
+- Configure the top-level `parserOptions` property like this:
 
----
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
+    tsconfigRootDir: __dirname,
+  },
+};
+```
 
-Enjoy!
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
